@@ -8,9 +8,7 @@ import {
   Star, 
   Menu, 
   X, 
-  ChevronRight,
-  Instagram,
-  Facebook
+  ChevronRight
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -26,7 +24,7 @@ const PHOTOS = {
 const SERVICES = [
   { name: "Men's Haircuts", description: "Precision cutting for the modern man.", icon: <Scissors className="w-5 h-5" /> },
   { name: "Hair Coloring", description: "Rich, vibrant dyes and perms with professional care.", icon: <Sparkles className="w-5 h-5" /> },
-  { name: "Nail Spa", description: "Pampering treatments for hands and feet.", icon: <Star className="w-5 h-5" /> },
+  { name: "Treatment & Repair", description: "Deep conditioning treatments to restore shine and hair health.", icon: <Sparkles className="w-5 h-5" /> },
   { name: "Styling & Blowouts", description: "Perfect looks for any occasion.", icon: <Sparkles className="w-5 h-5" /> }
 ];
 
@@ -278,56 +276,81 @@ export default function App() {
 
       {/* Contact & Hours */}
       <section id="contact" className="py-24 md:py-40 bg-white px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-20">
-          <div className="md:col-span-7 space-y-16">
-            <div className="space-y-6">
-              <span className="pill-tag">Visit the Salon</span>
-              <h2 className="serif text-6xl md:text-8xl leading-none">Find your <br /> <span className="italic text-brand-accent">glow</span> today.</h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-12">
-               <div className="space-y-10">
-                  <div className="flex items-start gap-4">
-                     <div className="p-3 bg-brand-bg rounded-2xl text-brand-accent"><MapPin /></div>
-                     <div className="space-y-1">
-                        <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">Location</span>
-                        <p className="text-xl font-medium tracking-tight">326 E McKinney St #101,<br />Denton, TX 76201</p>
-                     </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                     <div className="p-3 bg-brand-bg rounded-2xl text-brand-accent"><Phone /></div>
-                     <div className="space-y-1">
-                        <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">Direct Call</span>
-                        <a href="tel:4692226153" className="text-xl font-medium tracking-tight hover:text-brand-accent transition-colors">(469) 222-6153</a>
-                     </div>
-                  </div>
-               </div>
-               
-               <div className="relative group">
-                  <div className="absolute inset-0 bg-brand-accent/5 rounded-[2.5rem] rotate-3 group-hover:rotate-0 transition-transform duration-500" />
-                  <div className="relative bg-white border border-brand-accent/10 p-10 rounded-[2.5rem] shadow-xl">
-                      <span className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-6 block">Our Hours</span>
-                      <div className="space-y-4 text-sm font-medium">
-                         <div className="flex justify-between border-b border-slate-50 pb-2"><span>WED - FRI</span> <span className="text-brand-accent">10:00 - 19:00</span></div>
-                         <div className="flex justify-between border-b border-slate-50 pb-2"><span>SATURDAY</span> <span className="text-brand-accent">09:00 - 19:00</span></div>
-                         <div className="flex justify-between border-b border-slate-50 pb-2"><span>SUNDAY</span> <span className="text-brand-accent">12:00 - 18:00</span></div>
-                         <div className="flex justify-between text-slate-300"><span>MON - TUE</span> <span>Closed</span></div>
-                      </div>
-                  </div>
-               </div>
-            </div>
+        <div className="max-w-7xl mx-auto space-y-20">
+          <div className="text-center md:text-left space-y-6">
+            <span className="pill-tag">Visit the Salon</span>
+            <h2 className="serif text-6xl md:text-8xl leading-none tracking-tight">
+              Find your <br /> 
+              <span className="italic text-brand-accent">glow today.</span>
+            </h2>
           </div>
 
-          <div className="md:col-span-5 bg-brand-muted/30 p-12 md:p-16 rounded-[3.5rem] space-y-8 flex flex-col justify-center">
-             <h3 className="serif text-4xl">Ready to book?</h3>
-             <p className="text-slate-600 leading-relaxed text-lg">We can't wait to see you. For the best availability, we recommend booking a few days in advance.</p>
-             <a href="tel:4692226153" className="btn-primary text-center flex items-center justify-center gap-3">
-               Call to Schedule <Phone className="w-5 h-5" />
-             </a>
-             <div className="flex justify-center gap-8 pt-6">
-                <a href="#" className="p-4 bg-white rounded-full text-slate-400 hover:text-brand-accent transition-all shadow-sm"><Instagram /></a>
-                <a href="#" className="p-4 bg-white rounded-full text-slate-400 hover:text-brand-accent transition-all shadow-sm"><Facebook /></a>
-             </div>
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+            {/* Column 1: Core Details */}
+            <div className="bg-brand-muted/30 p-10 rounded-[2.5rem] border border-brand-accent/5 flex flex-col justify-between space-y-12">
+              <div className="space-y-10">
+                <div className="flex items-start gap-5">
+                  <div className="p-3 bg-white rounded-2xl text-brand-accent shrink-0 shadow-sm"><MapPin size={24} /></div>
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">Location</span>
+                    <p className="text-lg font-medium leading-tight text-brand-text">
+                      326 E McKinney St #101,<br />
+                      Denton, TX 76201
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-5">
+                  <div className="p-3 bg-white rounded-2xl text-brand-accent shrink-0 shadow-sm"><Phone size={24} /></div>
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">Direct Call</span>
+                    <a href="tel:4692226153" className="block text-xl font-bold tracking-tight hover:text-brand-accent transition-colors">
+                      (469) 222-6153
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a 
+                href="https://maps.google.com/?cid=16020735083279541476" 
+                target="_blank" 
+                className="text-xs font-bold uppercase tracking-widest text-brand-accent border-b border-brand-accent w-fit pb-1 hover:opacity-70 transition-opacity"
+              >
+                Get Directions
+              </a>
+            </div>
+
+            {/* Column 2: Hours */}
+            <div className="bg-white p-10 rounded-[2.5rem] border border-brand-accent/10 shadow-xl shadow-brand-accent/5">
+              <span className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-8 block">Opening Hours</span>
+              <div className="space-y-5 text-sm font-medium">
+                {[
+                  { days: "WED - FRI", hours: "10:00 - 19:00" },
+                  { days: "SATURDAY", hours: "09:00 - 19:00" },
+                  { days: "SUNDAY", hours: "12:00 - 18:00" },
+                  { days: "MON - TUE", hours: "Closed", muted: true },
+                ].map((item, i) => (
+                  <div key={i} className={`flex justify-between items-center border-b border-brand-accent/5 pb-3 last:border-0 last:pb-0 ${item.muted ? 'opacity-30' : ''}`}>
+                    <span className="opacity-70">{item.days}</span>
+                    <span className="text-brand-accent font-bold tabular-nums">{item.hours}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Column 3: Booking Card */}
+            <div className="bg-brand-accent p-10 rounded-[2.5rem] flex flex-col justify-between text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -mr-20 -mt-20 blur-2xl" />
+              <div className="relative z-10 space-y-6">
+                <h3 className="serif text-4xl italic leading-tight">Ready to transform?</h3>
+                <p className="text-white/80 leading-relaxed font-light">
+                  Spots fill up quickly. We recommend booking a few days in advance for your preferred time.
+                </p>
+              </div>
+              <div className="relative z-10 pt-8">
+                <a href="tel:4692226153" className="flex items-center justify-center gap-3 bg-white text-brand-accent px-8 py-4 rounded-full font-bold uppercase tracking-widest text-[11px] hover:scale-105 transition-all shadow-lg active:scale-95">
+                  Call to Schedule <Phone className="w-4 h-4 fill-current" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
