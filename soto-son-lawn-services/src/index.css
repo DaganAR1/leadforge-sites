@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", "Inter", Arial, sans-serif;
+  
+  --color-primary: #15803d; /* Vibrant Green */
+  --color-primary-light: #22c55e;
+  --color-sun-gold: #fbbf24;
+  --color-text-dark: #064e3b;
+  --color-text-light: #166534;
+  --color-bg-off-white: #f0fdf4;
+  --color-card-border: #dcfce7;
+}
